@@ -7,8 +7,8 @@ from setuptools_scm import get_version
 
 
 def _sync_package_json_version():
-    """Sync version from git tags to package.json"""
-    version = get_version()
+    """Sync version from _version.py to package.json"""
+    from omero_forms._version import version
 
     with open("package.json", "r") as f:
         data = json.load(f)
