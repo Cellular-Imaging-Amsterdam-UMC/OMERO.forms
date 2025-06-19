@@ -8,7 +8,7 @@ name = "omero-forms"
 description = "OMERO forms app for enhanced metadata input and provenance"
 readme = "README.rst"
 requires-python = ">=3.9"
-license = { text = "AGPL-3.0" }
+license = "AGPL-3.0"
 authors = [
     { name = "D.P.W. Russell" },
     { name = "T.T. Luik", email = "cellularimaging@amsterdamumc.nl" }
@@ -42,16 +42,11 @@ Homepage = "https://github.com/NL-BioImaging/OMERO.forms"
 Download = "https://github.com/NL-BioImaging/OMERO.forms/archive/refs/tags/v{version}.tar.gz"
 
 [tool.setuptools_scm]
-version_scheme = "guess-next-dev"
-local_scheme = "node-and-date"
-write_to = "omero_forms/_version.py"
 
 [tool.setuptools]
-packages = ["omero_forms"]
-package-data = {omero_forms = [
-    "static/forms/js/*",
-    "static/forms/js/*.js", 
-    "templates/forms/*",
-    "templates/forms/*.html",
-    "templates/*/*"
-]}
+packages = [
+    "omero_forms",
+    "omero_forms.static.forms.js",
+    "omero_forms.templates.forms"
+]
+include-package-data = true
