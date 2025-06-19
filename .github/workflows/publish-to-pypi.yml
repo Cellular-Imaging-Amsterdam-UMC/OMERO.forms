@@ -16,6 +16,9 @@ jobs:
       with:
         fetch-depth: 0
         fetch-tags: true
+
+    - name: Checkout the release tag expicitly
+      run: git checkout ${{ github.ref }}
     
     - name: Set up Python
       uses: actions/setup-python@v5
