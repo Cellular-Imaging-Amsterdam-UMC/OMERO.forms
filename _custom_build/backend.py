@@ -3,28 +3,12 @@ import subprocess
 import json
 from setuptools import build_meta as _orig
 from setuptools.build_meta import *
-from setuptools_scm import get_version
-
-
-def _sync_package_json_version():
-    """Sync version from _version.py to package.json"""
-    version = get_version(local_scheme="only-version")
-
-    with open("package.json", "r") as f:
-        data = json.load(f)
-
-    data["version"] = version
-
-    with open("package.json", "w") as f:
-        json.dump(data, f, indent=2)
 
 
 def _run_npm_build():
     """Run npm install and build"""
     # Create directory if it doesn't exist
     os.makedirs("omero_forms/static/forms/js", exist_ok=True)
-    # Sync version before npm install
-    _sync_package_json_version()
     subprocess.check_call(["npm", "install", "--legacy-peer-deps"])
     subprocess.check_call(["npm", "run", "build"])
 
