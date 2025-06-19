@@ -42,7 +42,6 @@ Homepage = "https://github.com/NL-BioImaging/OMERO.forms"
 Download = "https://github.com/NL-BioImaging/OMERO.forms/archive/refs/tags/v{version}.tar.gz"
 
 [tool.setuptools_scm]
-local_scheme = "only-version"
 
 [tool.setuptools]
 packages = [

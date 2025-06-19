@@ -11,3 +11,4 @@ build
 omero.cfg
 omero_su.cfg
 */_version.py
+omero_forms/static/*
